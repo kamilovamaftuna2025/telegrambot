@@ -11,10 +11,39 @@ bot.on('message', (msg) => {
     const id = msg.chat.id
     const first_name = msg.chat.first_name
     console.log(msg);
-    
-    bot.sendMessage(id, `xush kelibsiz ${first_name}` );
-    bot.sendDice(id)
+    if (text == "/start") {
+        bot.sendMessage(id, `Xush kelibsiz ${first_name}! `, {
+            reply_markup: {
+                keyboard: [
+                    [{ text: "Home🔥" }],
+                    [{ text: "Menu🍔" }, { text: "Til🌎" }]
+
+                ],
+                resize_keyboard: true
+            }
+
+        });
+    } else if (text == "/help") {
+        bot.sendMessage(id, `Sizga qanday yordam kerak? ${first_name}`)
+    } else if (text == "/sozlamalar") {
+        bot.sendMessage(id, `Sozlamalar:`)
+    }else if(text == "Home🔥"){
+        bot.sendMessage(id, `home ga kirildi...`)
+
+    }
+    else if(text == "Menu🍔"){
+        bot.sendMessage(id, `menu ga kirildi...`)
+
+    }
+    else if(text == "Til🌎"){
+        bot.sendMessage(id, `til ga kirildi...`)
+
+    }
+
+
+
+
     console.log(' Bot ishga tushdi..');
-}); 
+});
 
 
