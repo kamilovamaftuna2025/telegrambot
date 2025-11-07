@@ -147,7 +147,7 @@ bot.on('message', async (msg) => {
                     ]
                 ]
             }
-        })
+        })      
     }
     else if (text == "Sozlamalar") {
         const habar3 = await bot.sendMessage(id, `kuting...`)
